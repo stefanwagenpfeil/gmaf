@@ -6,6 +6,7 @@ import java.util.Vector;
 
 import de.swa.ui.MMFGCollection;
 import de.swa.ui.Configuration;
+import de.swa.ui.MMFGCollectionFactory;
 
 /** this class contains operations for Graph Code Collections, i.e. connected recursive lists of Graph Codes
  * 
@@ -23,7 +24,7 @@ public class GraphCodeCollection {
 	
 	/** returns the Feature Relevant Graph Code based on statistical relevance of the collection's Graph Codes **/
 	public static GraphCode getFeatureRelevantGraphCode(GraphCode gc1) {
-		if (gcstop == null) calculateGCStop(MMFGCollection.getInstance().getCollectionGraphCodes(), false);
+		if (gcstop == null) calculateGCStop(MMFGCollectionFactory.createOrGetCollection().getCollectionGraphCodes(), false);
 		return subtract(gc1, gcstop);
 	}
 	

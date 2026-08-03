@@ -46,7 +46,7 @@ public class Tools {
 	    
 	    if (showBoundingBox) {
 		    File f = Configuration.getInstance().getSelectedAsset();
-		    MMFG fv = MMFGCollection.getInstance().getMMFGForFile(f);
+		    MMFG fv = MMFGCollectionFactory.createOrGetCollection().getMMFGForFile(f);
 		    drawBoundingBoxes(fv, g2, scale, horizontalOffset / 2, verticalOffset / 2);
 	    }
 	    g2.dispose();
